@@ -1,0 +1,34 @@
+# Copy this file to config.yaml and edit the currency pairs if needed.
+
+web:
+  # Exporter listen address and metrics path.
+  listen_address: "0.0.0.0:9131"
+  telemetry_path: "/metrics"
+
+scrape:
+  # External API timeout and refresh interval.
+  timeout_seconds: 10
+  update_interval_seconds: 28800
+
+  # Retry behavior for failed API requests.
+  retries: 3
+  retry_backoff_seconds: 1
+
+  # Exporter logging and default Python/process metrics.
+  expose_default_metrics: false
+  log_level: INFO
+
+# Data source:
+# https://github.com/fawazahmed0/exchange-api
+#
+# Currency symbols list:
+# https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json
+#
+# Format: BASE-QUOTE
+pairs:
+  - BTC-USD
+  - EUR-BRL
+  - USD-BRL
+  - GBP-EUR
+  - EUR-USD
+  - CNY-USD
