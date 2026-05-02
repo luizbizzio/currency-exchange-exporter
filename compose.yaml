@@ -1,0 +1,9 @@
+services:
+  currency-exchange-exporter:
+    image: ghcr.io/luizbizzio/currency-exchange-exporter:latest
+    container_name: currency-exchange-exporter
+    restart: unless-stopped
+    ports:
+      - "9131:9131"
+    volumes:
+      - ./config.yaml:/config/config.yaml:ro
